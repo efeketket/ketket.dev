@@ -41,6 +41,15 @@ const config = {
     locales: ['en'],
   },
 
+  // Google AdSense script
+  scripts: [
+    {
+      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9510503271005373',
+      async: true,
+      crossorigin: 'anonymous',
+    },
+  ],
+
   presets: [
     [
       'classic',
