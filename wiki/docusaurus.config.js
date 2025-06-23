@@ -71,12 +71,6 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
-        // SEO and metadata
-        metadata: [
-          {name: 'description', content: "Explore Ketket's Minecraft mods, datapacks, and development projects. Discover crafting systems, GUI tools, and game mechanics for enhanced Minecraft experience."},
-          {name: 'keywords', content: 'minecraft, mods, datapacks, ketket, development, crafting, gui, game mechanics'},
-          {name: 'author', content: 'Efe Ketenci'},
-        ],
       }),
     ],
   ],
