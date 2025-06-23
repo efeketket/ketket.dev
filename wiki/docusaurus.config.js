@@ -80,6 +80,14 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/transppp.png',
+      
+      // Color mode configuration
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
+      
       navbar: {
         title: "Ketket's Creations",
         logo: {
