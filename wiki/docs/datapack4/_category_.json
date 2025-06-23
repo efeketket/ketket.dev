@@ -1,0 +1,8 @@
+{
+  "label": "🧭 Easy Coordinates",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Displays your coordinates, daytime, and direction on screen, simplifies location sharing, and shows death coordinates in chat."
+  }
+} 

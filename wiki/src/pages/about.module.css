@@ -1,0 +1,574 @@
+.main {
+  min-height: 100vh;
+  background: linear-gradient(165deg, 
+    var(--ifm-color-primary-darker) 0%,
+    var(--ifm-color-primary-darkest) 100%);
+  color: var(--ifm-color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 0%, 
+    rgba(46, 235, 148, 0.15) 0%,
+    rgba(46, 235, 148, 0.05) 50%,
+    transparent 100%);
+  pointer-events: none;
+}
+
+.container {
+  width: 100%;
+}
+
+.heroSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+}
+
+.maxWidth {
+  max-width: 64rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mainCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  padding: 2rem 3rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.mainCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg,
+    rgba(46, 235, 148, 0.1) 0%,
+    rgba(46, 235, 148, 0.05) 50%,
+    transparent 100%);
+  pointer-events: none;
+}
+
+.mainCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01) translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .cardContent {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.profileImageContainer {
+  flex-shrink: 0;
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileImageGlow {
+  position: absolute;
+  inset: -5px;
+  background: linear-gradient(135deg, 
+    rgba(46, 235, 148, 0.8) 0%,
+    rgba(46, 235, 148, 0.4) 100%);
+  border-radius: 9999px;
+  filter: blur(15px);
+  opacity: 0.3;
+  z-index: 0;
+  transform: scale(1.05);
+}
+
+.profileImage {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 3px solid var(--ifm-color-primary-light);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.profileInfo {
+  flex: 1;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .profileInfo {
+    text-align: left;
+  }
+}
+
+.name {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--ifm-color-primary-lightest);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+@media (min-width: 768px) {
+  .name {
+    font-size: 4rem;
+  }
+}
+
+.titleContainer {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .tagsContainer {
+    justify-content: flex-start;
+  }
+}
+
+.tag {
+  padding: 0.75rem 1.5rem;
+  background: rgba(46, 235, 148, 0.1);
+  color: var(--ifm-color-white);
+  border-radius: 9999px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: 1px solid rgba(46, 235, 148, 0.2);
+  transition: all 0.3s ease;
+  transform: scale(1);
+  cursor: default;
+  letter-spacing: 0.3px;
+}
+
+.tag:hover {
+  transform: scale(1.05);
+  background: rgba(46, 235, 148, 0.15);
+  border-color: rgba(46, 235, 148, 0.3);
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .buttonContainer {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .buttonContainer {
+    justify-content: flex-start;
+  }
+}
+
+.primaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.5rem;
+  background: linear-gradient(135deg, 
+    rgba(46, 235, 148, 1) 0%,
+    rgba(39, 199, 125, 1) 100%);
+  color: white;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  font-size: 1.15rem;
+  border: none;
+}
+
+.primaryButton:hover {
+  background: linear-gradient(135deg, 
+    rgba(46, 235, 148, 0.9) 0%,
+    rgba(39, 199, 125, 0.9) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  color: white;
+  text-decoration: none;
+}
+
+.secondaryButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.15rem;
+  backdrop-filter: blur(10px);
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--ifm-color-primary-lightest);
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary-light);
+  text-decoration: none;
+}
+
+.buttonIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.aboutCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  padding: 2rem 3rem;
+  margin-top: 5rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg,
+    rgba(46, 235, 148, 0.1) 0%,
+    rgba(46, 235, 148, 0.05) 50%,
+    transparent 100%);
+  pointer-events: none;
+}
+
+.aboutCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01) translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.aboutTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--ifm-color-primary-lightest);
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+@media (min-width: 768px) {
+  .aboutTitle {
+    font-size: 3rem;
+  }
+}
+
+.aboutContent {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  font-size: 1.25rem;
+  letter-spacing: 0.2px;
+}
+
+.aboutContent h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--ifm-color-primary-lightest);
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.5px;
+}
+
+.aboutContent h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary-lighter);
+  margin: 2.5rem 0 1.2rem;
+  letter-spacing: -0.3px;
+}
+
+.aboutContent p {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.9;
+}
+
+.aboutContent ul {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+  font-size: 1.25rem;
+}
+
+.aboutContent li {
+  margin-bottom: 0.8rem;
+  line-height: 1.9;
+}
+
+.aboutContent strong {
+  color: var(--ifm-color-primary-lightest);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.aboutContent hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 2.5rem 0;
+}
+
+/* Emoji styles */
+.aboutContent h1 img,
+.aboutContent h2 img {
+  display: inline;
+  vertical-align: middle;
+  margin-right: 0.8rem;
+  width: 1.8em;
+  height: 1.8em;
+}
+
+.aboutText {
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ifm-color-primary-light);
+  margin-left: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.readMore:hover {
+  color: var(--ifm-color-primary-lightest);
+}
+
+.readMoreIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0.25rem;
+}
+
+/* Dark mode compatibility */
+[data-theme='dark'] .main {
+  background: #1a1b26;
+}
+
+[data-theme='dark'] .mainCard,
+[data-theme='dark'] .aboutCard {
+  background: #1E293B;
+  border-color: #334155;
+}
+
+[data-theme='dark'] .mainCard:hover,
+[data-theme='dark'] .aboutCard:hover {
+  background: #293548;
+}
+
+[data-theme='dark'] .tag {
+  background: #293548;
+  border-color: #334155;
+}
+
+[data-theme='dark'] .tag:hover {
+  background: #334155;
+}
+
+[data-theme='dark'] .secondaryButton {
+  background: #293548;
+  border-color: #64748b;
+}
+
+[data-theme='dark'] .secondaryButton:hover {
+  background: #334155;
+}
+
+/* Light mode adjustments */
+[data-theme='light'] .main {
+  background: #F8FAFC;
+}
+
+[data-theme='light'] .mainCard,
+[data-theme='light'] .aboutCard {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .mainCard:hover,
+[data-theme='light'] .aboutCard:hover {
+  background: #F1F5F9;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .name,
+[data-theme='light'] .aboutTitle {
+  color: #1E293B;
+}
+
+[data-theme='light'] .title,
+[data-theme='light'] .tag,
+[data-theme='light'] .readMore {
+  color: #475569;
+}
+
+[data-theme='light'] .aboutText {
+  color: #475569;
+}
+
+[data-theme='light'] .tag {
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+}
+
+[data-theme='light'] .tag:hover {
+  background: #E2E8F0;
+}
+
+[data-theme='light'] .secondaryButton {
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+  color: #475569;
+}
+
+[data-theme='light'] .secondaryButton:hover {
+  background: #E2E8F0;
+  color: #1E293B;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 2rem 1rem;
+  }
+  
+  .mainCard,
+  .aboutCard {
+    padding: 1.5rem 2rem;
+  }
+  
+  .name {
+    font-size: 2rem;
+  }
+  
+  .aboutTitle {
+    font-size: 1.75rem;
+  }
+  
+  .buttonContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .secondaryButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .secondaryButton {
+    width: 100%;
+  }
+}
+
+/* Language Selector Styles */
+.languageSelector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.langButton {
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ifm-color-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  letter-spacing: 0.5px;
+}
+
+.langButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.activeLang {
+  background: rgba(46, 235, 148, 0.2);
+  border-color: rgba(46, 235, 148, 0.4);
+  color: var(--ifm-color-primary-lightest);
+  box-shadow: 0 0 20px rgba(46, 235, 148, 0.3);
+}
+
+.activeLang:hover {
+  background: rgba(46, 235, 148, 0.25);
+  border-color: rgba(46, 235, 148, 0.5);
+} 

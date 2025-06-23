@@ -1,0 +1,8 @@
+{
+  "label": "🪦 Graves",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "This datapack creates a grave when a player dies, safely storing their items. Retrieve your belongings without worrying about losing them!"
+  }
+} 

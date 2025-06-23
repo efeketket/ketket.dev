@@ -1,0 +1,146 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Sağdaki TOC başlıklarını büyüt */
+.theme-doc-toc-desktop ul li a {
+  font-size: 1.2em;
+}
+
+.theme-doc-toc-desktop .table-of-contents__link--active {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+/* Navbar title'ı büyüt */
+.navbar__title {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+/* Navbar logo'sunu büyüt */
+.navbar__logo img {
+  height: 53px !important;
+  width: 53px !important;
+  margin-top: -10px;
+}
+
+/* Navbar item'larını büyüt ve sağa hizala */
+.navbar__item {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.navbar__items--right {
+  margin-left: auto;
+}
+
+/* About Me'nin sağına çizgi ekle */
+.navbar__item:nth-child(2)::after {
+  content: '|';
+  margin-left: 15px;
+  color: var(--ifm-color-primary);
+  font-weight: bold;
+}
+
+/* Wiki sayfalarındaki içerik yazılarını büyüt */
+.theme-doc-markdown {
+  font-size: 1.1em;
+  line-height: 1.7;
+}
+
+.theme-doc-markdown h1 {
+  font-size: 2.2em;
+  margin-bottom: 1.5rem;
+}
+
+.theme-doc-markdown h2 {
+  font-size: 1.8em;
+  margin-bottom: 1.2rem;
+}
+
+.theme-doc-markdown h3 {
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+}
+
+.theme-doc-markdown p {
+  margin-bottom: 1.2rem;
+}
+
+/* Category açıklamalarını büyüt */
+.theme-doc-markdown .theme-edit-this-page {
+  font-size: 1.1em;
+}
+
+.theme-doc-markdown .theme-edit-this-page + div {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Generated index sayfalarındaki açıklamaları büyüt */
+.theme-doc-markdown .theme-doc-description {
+  font-size: 1.2em;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Markdown details özelliğini gri yap */
+.theme-doc-markdown details {
+  background-color: #2d3238;
+  border: 1px solid #1e2124;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.theme-doc-markdown details summary {
+  color: #e9ecef;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.theme-doc-markdown details > *:not(summary) {
+  color: #dee2e6;
+}
+
+/* Light mode için details özelliğini açık gri yap */
+[data-theme='light'] .theme-doc-markdown details {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+[data-theme='light'] .theme-doc-markdown details summary {
+  color: #495057;
+}
+
+[data-theme='light'] .theme-doc-markdown details > *:not(summary) {
+  color: #343a40;
+}
