@@ -1,7 +1,23 @@
 {
-  "name": "wiki",
-  "version": "0.0.0",
+  "name": "ketket-wiki",
+  "version": "1.0.0",
+  "description": "Ketket's Minecraft mods and development projects documentation site",
   "private": true,
+  "author": "Efe Ketenci",
+  "license": "MIT",
+  "homepage": "https://ketket.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/efeketket/ketket.dev.git"
+  },
+  "keywords": [
+    "minecraft",
+    "mods",
+    "datapacks",
+    "ketket",
+    "development",
+    "docusaurus"
+  ],
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

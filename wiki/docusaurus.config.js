@@ -71,6 +71,12 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        // SEO and metadata
+        metadata: [
+          {name: 'description', content: "Explore Ketket's Minecraft mods, datapacks, and development projects. Discover crafting systems, GUI tools, and game mechanics for enhanced Minecraft experience."},
+          {name: 'keywords', content: 'minecraft, mods, datapacks, ketket, development, crafting, gui, game mechanics'},
+          {name: 'author', content: 'Efe Ketenci'},
+        ],
       }),
     ],
   ],
@@ -118,26 +124,38 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Wiki',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              }
-            ],
-          },
-          {
-            title: 'More',
+            title: 'Projects',
             items: [
               {
                 label: 'Modrinth',
                 href: 'https://modrinth.com/user/efeketket',
+              },
+              {
+                label: 'CurseForge',
+                href: 'https://www.curseforge.com/members/efeketket__/projects',
+              },
+              {
+                label: 'PlanetMC',
+                href: 'https://www.planetminecraft.com/member/efeketket/',
+              }
+            ],
+          },
+          {
+            title: 'Social',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/efeketket',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/in/efe-ketancı-193902248/',
               },
               {
                 label: 'Instagram',
@@ -146,7 +164,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Ketket's Wiki, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Efe Ketenci. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
