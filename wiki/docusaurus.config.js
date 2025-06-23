@@ -128,12 +128,12 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Datapacks',
-                to: '/blog',
-              },
-              {
                 label: 'Modrinth',
                 href: 'https://modrinth.com/user/efeketket',
+              },
+              {
+                label: 'Instagram',
+                href: 'https://instagram.com/efeketket',
               },
             ],
           },
