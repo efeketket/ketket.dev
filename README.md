@@ -114,23 +114,6 @@ const getCurrentPageCards = () => {
 };
 ```
 
-## 🌟 Öne Çıkan Projeler
-
-### 🪑 FurniCraft
-- **17,000+** indirme
-- Vanilla-style mobilya sistemi
-- Resource pack gerektirmez
-
-### ⚰️ Graves
-- **5,500+** indirme
-- Güvenli item saklama
-- Ölüm sonrası item koruması
-
-### 🏪 Player Shops
-- **4,200+** indirme
-- Oyuncu dükkan sistemi
-- Ekonomi yönetimi
-
 ## 🔧 Geliştirme
 
 ### Yeni Proje Ekleme
