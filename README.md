@@ -1,101 +1,110 @@
 # 🎮 Ketket.dev - Minecraft Projects Portfolio
 
-Modern ve kullanıcı dostu bir Minecraft projeleri portföy sitesi. React ve Docusaurus kullanılarak geliştirilmiş, çok dilli destek ve dinamik içerik yönetimi özelliklerine sahip.
+A modern and user-friendly Minecraft projects portfolio website. Built with React and Docusaurus, featuring multi-language support and dynamic content management.
 
-## ✨ Özellikler
+## ✨ Features
 
-### 🌐 Çok Dilli Destek
-- **Türkçe/İngilizce** geçiş sistemi
-- Dinamik içerik değişimi
-- Tutarlı kullanıcı deneyimi
+### 🌐 Multi-Language Support
+- **Turkish/English** language switching system
+- Dynamic content changes
+- Consistent user experience
 
-### 📊 Dinamik Proje Yönetimi
-- **Modrinth API** entegrasyonu
-- Gerçek zamanlı indirme sayıları
-- Popülerlik bazlı sıralama
-- Sayfalama sistemi (6'lı kartlar)
+### 📊 Dynamic Project Management
+- **Modrinth API** integration
+- Real-time download counts
+- Popularity-based sorting
+- Pagination system (6 cards per page)
 
-### 🎨 Modern Tasarım
-- **Glassmorphism** efektleri
-- Smooth animasyonlar
-- Responsive tasarım
-- Premium kullanıcı deneyimi
+### 🎨 Modern Design
+- **Glassmorphism** effects
+- Smooth animations
+- Responsive design
+- Premium user experience
 
-### 📱 Responsive Tasarım
-- Mobil uyumlu
-- Tablet optimizasyonu
-- Desktop deneyimi
-- Tüm cihazlarda mükemmel görünüm
+### 📱 Responsive Design
+- Mobile-friendly
+- Tablet optimization
+- Desktop experience
+- Perfect appearance on all devices
 
-## 🚀 Teknolojiler
+## 🚀 Technologies
 
 - **React 18** - Modern UI framework
 - **Docusaurus 3** - Static site generator
 - **CSS Modules** - Scoped styling
 - **GitHub Pages** - Hosting
-- **Modrinth API** - Minecraft mod verileri
+- **Modrinth API** - Minecraft mod data
 
-## 📦 Kurulum
+## 📦 Installation
 
-### Gereksinimler
+### Requirements
 - Node.js 18+ 
-- npm veya yarn
+- npm or yarn
 
-### Adımlar
+### Steps
 
-1. **Repository'yi klonlayın**
+1. **Clone the repository**
 ```bash
 git clone https://github.com/efeketket/ketketwiki.git
 cd ketketwiki
 ```
 
-2. **Bağımlılıkları yükleyin**
+2. **Install dependencies**
 ```bash
 npm install
 ```
 
-3. **Geliştirme sunucusunu başlatın**
+3. **Start development server**
 ```bash
 npm start
 ```
 
-4. **Tarayıcıda açın**
+4. **Open in browser**
 ```
 http://localhost:3000
 ```
 
-## 🏗️ Proje Yapısı
+## 🏗️ Project Structure
 
 ```
 ketketwiki/
-├── wiki/                    # Ana Docusaurus projesi
+├── wiki/                    # Main Docusaurus project
 │   ├── src/
-│   │   ├── components/      # React bileşenleri
-│   │   │   ├── DatapackCarousel/    # Proje galerisi
-│   │   │   └── HomepageFeatures/    # Ana sayfa özellikleri
-│   │   ├── pages/          # Sayfa bileşenleri
-│   │   │   ├── about.js    # Hakkımda sayfası
-│   │   │   ├── about.md    # Türkçe içerik
-│   │   │   └── abouteng.md # İngilizce içerik
-│   │   └── css/            # Global stiller
-│   ├── docs/               # Dokümantasyon
-│   ├── static/             # Statik dosyalar
+│   │   ├── components/      # React components
+│   │   │   ├── DatapackCarousel/    # Project gallery
+│   │   │   ├── HomepageFeatures/    # Homepage features
+│   │   │   └── SportsProjects/      # Sports projects
+│   │   ├── pages/          # Page components
+│   │   │   ├── about.js    # About page
+│   │   │   ├── about.md    # Turkish content
+│   │   │   └── abouteng.md # English content
+│   │   └── css/            # Global styles
+│   ├── docs/               # Documentation
+│   │   ├── datapack1/      # Datapack 1 docs
+│   │   ├── datapack2/      # Datapack 2 docs
+│   │   ├── datapack3/      # Datapack 3 docs
+│   │   ├── datapack4/      # Datapack 4 docs
+│   │   ├── datapack5/      # Datapack 5 docs
+│   │   ├── datapack6/      # Datapack 6 docs
+│   │   └── datapack7/      # Datapack 7 docs
+│   ├── blog/               # Blog posts
+│   ├── static/             # Static files
 │   └── docusaurus.config.js
 └── README.md
 ```
 
-## 🎯 Özellik Detayları
+## 🎯 Feature Details
 
-### Dil Değiştirme Sistemi
+### Language Switching System
 ```javascript
-// State yönetimi ile dil değişimi
+// State management for language switching
 const [selectedLanguage, setSelectedLanguage] = useState('tr');
 const currentContent = selectedLanguage === 'tr' ? turkishContent : englishContent;
 ```
 
-### Popülerlik Sıralaması
+### Popularity Sorting
 ```javascript
-// İndirme sayılarına göre sıralama
+// Sort by download counts
 const getSortedProjects = () => {
   return projects.map(project => ({
     ...project,
@@ -104,9 +113,9 @@ const getSortedProjects = () => {
 };
 ```
 
-### Sayfalama Sistemi
+### Pagination System
 ```javascript
-// 6'lı kartlar halinde sayfalama
+// 6 cards per page pagination
 const CARDS_PER_PAGE = 6;
 const getCurrentPageCards = () => {
   const startIndex = currentPage * CARDS_PER_PAGE;
@@ -114,51 +123,51 @@ const getCurrentPageCards = () => {
 };
 ```
 
-## 🔧 Geliştirme
+## 🔧 Development
 
-### Yeni Proje Ekleme
-1. `DatapackProjects` array'ine yeni proje ekleyin
-2. Proje görsellerini `static/img/` klasörüne ekleyin
-3. Modrinth ID'sini belirtin (API entegrasyonu için)
+### Adding New Projects
+1. Add new project to `DatapackProjects` array
+2. Add project images to `static/img/` folder
+3. Specify Modrinth ID (for API integration)
 
-### Stil Değişiklikleri
-- CSS Modules kullanın
-- Component-specific stiller
-- Global stiller için `src/css/custom.css`
+### Style Changes
+- Use CSS Modules
+- Component-specific styles
+- Global styles in `src/css/custom.css`
 
-### API Entegrasyonu
+### API Integration
 - Modrinth API: `https://api.modrinth.com/v2/project/{id}`
-- Otomatik download sayısı güncelleme
-- Hata yönetimi dahil
+- Automatic download count updates
+- Error handling included
 
-## 📈 Performans
+## 📈 Performance
 
 - **Lighthouse Score**: 95+
 - **First Contentful Paint**: < 1.5s
 - **Largest Contentful Paint**: < 2.5s
 - **Cumulative Layout Shift**: < 0.1
 
-## 🤝 Katkıda Bulunma
+## 🤝 Contributing
 
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Commit yapın (`git commit -m 'Add amazing feature'`)
-4. Push yapın (`git push origin feature/amazing-feature`)
-5. Pull Request açın
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📄 Lisans
+## 📄 License
 
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Geliştirici
+## 👨‍💻 Developer
 
 **Efe Ketenci**
-- 🎓 Eskişehir Osmangazi Üniversitesi - Matematik ve Bilgisayar Bilimleri
-- 🎮 Minecraft mod geliştirici
+- 🎓 Eskişehir Osmangazi University - Mathematics and Computer Science
+- 🎮 Minecraft mod developer
 - 🌐 [ketket.dev](https://ketket.dev)
 - 📧 [LinkedIn](https://www.linkedin.com/in/efe-ketancı-193902248/)
 
-## 🔗 Bağlantılar
+## 🔗 Links
 
 - 🌐 **Website**: [ketket.dev](https://ketket.dev)
 - 📦 **Modrinth**: [efeketket](https://modrinth.com/user/efeketket)
@@ -167,4 +176,4 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 
 ---
 
-⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın! 
+⭐ Don't forget to star this project if you liked it! 

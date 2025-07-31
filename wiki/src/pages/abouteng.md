@@ -1,6 +1,6 @@
 ## 👋 About Me
 
-Hi! I'm **Efe Ketenci**, a 20-year-old developer based in Istanbul, Turkey.  
+Hi! I'm **Efe Ketenci**, a 21-year-old developer based in Istanbul, Turkey.  
 I'm currently a 3rd-year student at Eskişehir Osmangazi University, studying Mathematics and Computer Science.
 
 I work on a wide range of projects — primarily focused on software development, mathematical modeling, and audiovisual systems.  

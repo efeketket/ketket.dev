@@ -63,9 +63,17 @@
 }
 
 /* About Me'nin sağına çizgi ekle */
-.navbar__item:nth-child(2)::after {
+/* .navbar__item:nth-child(2)::after {
   content: '|';
   margin-left: 15px;
+  color: var(--ifm-color-primary);
+  font-weight: bold;
+} */
+
+/* GitHub'ın soluna çizgi ekle */
+.navbar__item[href*="github.com"]::before {
+  content: '|';
+  margin-right: 15px;
   color: var(--ifm-color-primary);
   font-weight: bold;
 }

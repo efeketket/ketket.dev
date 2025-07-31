@@ -1,6 +1,6 @@
 ## 👋 Hakkımda
 
-Merhaba, ben **Efe Ketenci**. İstanbul'da yaşıyorum, 20 yaşındayım.  
+Merhaba, ben **Efe Ketenci**. İstanbul'da yaşıyorum, 21 yaşındayım.  
 Eskişehir Osmangazi Üniversitesi'nde Matematik ve Bilgisayar Bilimleri 3. sınıf öğrencisiyim.
 
 Yazılım geliştirme, matematiksel modelleme ve görsel-işitsel sistemler başta olmak üzere, farklı alanlara yönelik projeler üzerinde çalışıyorum.  

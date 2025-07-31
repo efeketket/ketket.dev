@@ -1,3 +1,53 @@
+datapack:
+  label: Datapack
+  permalink: /datapack
+  description: Content related to Minecraft datapacks
+
+minecraft:
+  label: Minecraft
+  permalink: /minecraft
+  description: Content related to Minecraft game
+
+installation:
+  label: Installation
+  permalink: /installation
+  description: Datapack installation guides
+
+troubleshooting:
+  label: Troubleshooting
+  permalink: /troubleshooting
+  description: Datapack issues and solutions
+
+compatibility:
+  label: Compatibility
+  permalink: /compatibility
+  description: Minecraft version compatibility
+
+removal:
+  label: Removal
+  permalink: /removal
+  description: Datapack removal guides
+
+general:
+  label: General
+  permalink: /general
+  description: General datapack information
+
+error:
+  label: Error
+  permalink: /error
+  description: Error solutions
+
+solution:
+  label: Solution
+  permalink: /solution
+  description: Problem solutions
+
+version:
+  label: Version
+  permalink: /version
+  description: Minecraft version information
+
 facebook:
   label: Facebook
   permalink: /facebook

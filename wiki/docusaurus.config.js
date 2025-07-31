@@ -112,6 +112,7 @@ const config = {
             position: 'right',
             label: 'Wiki',
           },
+          {to: '/blog', label: 'FAQ', position: 'right'},
           {to: '/about', label: 'About Me', position: 'right'},
           {
             href: 'https://github.com/efeketket',
