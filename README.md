@@ -1,4 +1,4 @@
-# 🎮 Ketket.dev - Minecraft Projects Portfolio
+# 🎮 Ketket.dev - Projects Portfolio
 
 Modern ve kullanıcı dostu bir Minecraft projeleri portföy sitesi. React ve Docusaurus kullanılarak geliştirilmiş, çok dilli destek ve dinamik içerik yönetimi özelliklerine sahip.
 
