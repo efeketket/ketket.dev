@@ -1,4 +1,4 @@
-# 🎮 Ketket.dev - Minecraft Projects Portfolio
+# 🎮 Ketket.dev - Projects Portfolio
 
 A modern and user-friendly Minecraft projects portfolio website. Built with React and Docusaurus, featuring multi-language support and dynamic content management.
 
