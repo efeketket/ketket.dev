@@ -4,6 +4,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import DatapackCarousel from '@site/src/components/DatapackCarousel';
+import OtherProjectsSection from '@site/src/components/OtherProjects';
+import OtherProjectsCarousel from '@site/src/components/OtherProjectsCarousel';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -23,6 +25,11 @@ function HomepageHeader() {
             to="/docs/intro">
             📂 Explore Projects
           </Link>
+          <Link
+            className="button button--outline button--lg"
+            to="#minecraft-projects">
+            ⛏️ Minecraft Projects
+          </Link>
         </div>
       </div>
     </header>
@@ -37,8 +44,12 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
-        <DatapackCarousel />
+        {/* <OtherProjectsSection /> */}
+        {/* <OtherProjectsCarousel /> */}
+        <div id="minecraft-projects">
+          <HomepageFeatures />
+          <DatapackCarousel />
+        </div>
       </main>
     </Layout>
   );

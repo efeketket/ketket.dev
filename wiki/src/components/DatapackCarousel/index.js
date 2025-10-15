@@ -94,6 +94,19 @@ const DatapackProjects = [
     planetmc: 'https://www.planetminecraft.com/data-pack/ketket-s-stackraft-less-stack-more-store/',
     planetmcDownloads: 500,
     curseforge: '#'
+  },
+  {
+    id: 'undyingrefill',
+    title: 'UndyingRefill',
+    description: 'UndyingRefill Automatically replaces your used Totem of Undying — first from your inventory, or from the first shulker box that has one. No commands. No setup. Just survive.',
+    coverImage: '/img/undyingrefill/templatedying.png',
+    link: '/docs/category/-furnicraft',
+    icon: '/img/undyingrefill/pack.png',
+    modrinth: 'https://modrinth.com/datapack/undyingrefill',
+    modrinthId: 'undyingrefill',
+    planetmc: 'https://www.planetminecraft.com/data-pack/ketket-s-undyingrefill',
+    planetmcDownloads: 300,
+    curseforge: '#'
   }
 ];
 
