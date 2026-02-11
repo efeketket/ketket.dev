@@ -1,114 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import Link from '@docusaurus/Link';
-import clsx from 'clsx';
 import styles from './styles.module.css';
-
-const DatapackProjects = [
-  {
-    id: 'furnicraft',
-    title: 'FurniCraft',
-    description: 'Furnish your Minecraft world with beautiful vanilla-style furniture. Add chairs, tables, cabinets, and more without any resource packs required.',
-    coverImage: '/img/furnicraft/furnicraftmain2.png',
-    link: '/docs/category/-furnicraft',
-    icon: '/img/furnicraft/newicon.png',
-    modrinth: 'https://modrinth.com/datapack/ketkets-furnicraft',
-    modrinthId: 'ketkets-furnicraft',
-    planetmc: 'https://www.planetminecraft.com/data-pack/ketket-s-furnicraft-no-texture-pack-1-20/',
-    planetmcDownloads: 17720,
-    curseforge: '#'
-  },
-  {
-    id: 'playershops',
-    title: 'Player Shops',
-    description: 'Earn in style with this user-friendly player shop datapack! Villagers will be your only competitors.',
-    coverImage: '/img/playershops/playershopmaincenter.png',
-    link: '/docs/category/player-shops',
-    icon: '/img/playershops/shopicon.png',
-    modrinth: 'https://modrinth.com/datapack/ketkets-player-shops',
-    modrinthId: 'ketkets-player-shops',
-    planetmc: 'https://www.planetminecraft.com/data-pack/ketket-s-player-shops-make-money-in-style-1-20-1-19-4/',
-    planetmcDownloads: 4200,
-    curseforge: '#'
-  },
-  {
-    id: 'graves',
-    title: 'Graves',
-    description: 'This datapack creates a grave when a player dies, safely storing their items. Retrieve your belongings without worrying about losing them!',
-    coverImage: '/img/graves/mainheader.png',
-    link: '/docs/category/-graves',
-    icon: '/img/graves/gravesicon.png',
-    modrinth: 'https://modrinth.com/datapack/ketket-graves',
-    modrinthId: 'ketket-graves',
-    planetmc: 'https://www.planetminecraft.com/data-pack/ketket-s-graves-secure-your-items/',
-    planetmcDownloads: 5500,
-    curseforge: '#'
-  },
-  {
-    id: 'easy-coordinates',
-    title: 'Easy Coordinates',
-    description: 'Access a vast collection of custom player heads for decoration, building, and creative projects throughout your Minecraft world.',
-    coverImage: '/img/easycoords/banner.png',
-    link: '/docs/category/-easy-coordinates',
-    icon: '/img/easycoords/icon1.png',
-    modrinth: 'https://modrinth.com/datapack/easycoords',
-    modrinthId: 'easycoords',
-    planetmc: 'https://www.planetminecraft.com/data-pack/easycoords-find-your-way/',
-    planetmcDownloads: 700,
-    curseforge: '#'
-  },
-  {
-    id: 'quick-shulker-boxes',
-    title: 'Quick Shulker Boxes',
-    description: 'Access a vast collection of custom player heads for decoration, building, and creative projects throughout your Minecraft world.',
-    coverImage: '/img/quickshulker/header1.png',
-    link: '/docs/datapack5/intro',
-    icon: '/img/quickshulker/pack.png',
-    modrinth: 'https://modrinth.com/datapack/quick-shulker-boxes',
-    modrinthId: 'quick-shulker-boxes',
-    planetmc: 'https://www.planetminecraft.com/data-pack/quick-shulker-boxes-hold-and-open/',
-    planetmcDownloads: 516,
-    curseforge: '#'
-  },
-  {
-    id: 'better-hanging-signs',
-    title: 'Better Hanging Signs',
-    description: 'Access a vast collection of custom player heads for decoration, building, and creative projects throughout your Minecraft world.',
-    coverImage: '/img/betterhanging/signmain.png',
-    link: '/docs/datapack6/intro',
-    icon: '/img/betterhanging/icon1.png',
-    modrinth: 'https://modrinth.com/datapack/better-hanging-signs',
-    modrinthId: 'better-hanging-signs',
-    planetmc: 'https://www.planetminecraft.com/data-pack/ketket-s-better-hanging-signs-place-items-on-a-signs-1-20/',
-    planetmcDownloads: 7000,
-    curseforge: '#'
-  },
-  {
-    id: 'stackcraft',
-    title: 'Stackcraft',
-    description: 'Access a vast collection of custom player heads for decoration, building, and creative projects throughout your Minecraft world.',
-    coverImage: '/img/stackraft/header1.png',
-    link: '/docs/datapack7/intro',
-    icon: '/img/stackraft/icon1.png',
-    modrinth: 'https://modrinth.com/datapack/stackraft',
-    modrinthId: 'stackraft',
-    planetmc: 'https://www.planetminecraft.com/data-pack/ketket-s-stackraft-less-stack-more-store/',
-    planetmcDownloads: 500,
-    curseforge: '#'
-  },
-  {
-    id: 'undyingrefill',
-    title: 'UndyingRefill',
-    description: 'UndyingRefill Automatically replaces your used Totem of Undying — first from your inventory, or from the first shulker box that has one. No commands. No setup. Just survive.',
-    coverImage: '/img/undyingrefill/templatedying.png',
-    link: '/docs/category/-furnicraft',
-    icon: '/img/undyingrefill/pack.png',
-    modrinth: 'https://modrinth.com/datapack/undyingrefill',
-    modrinthId: 'undyingrefill',
-    planetmc: 'https://www.planetminecraft.com/data-pack/ketket-s-undyingrefill',
-    planetmcDownloads: 300,
-    curseforge: '#'
-  }
-];
 
 // Download sayısını formatla
 function formatDownloads(downloads) {
@@ -146,26 +37,50 @@ function formatDate(dateString) {
 }
 
 function DatapackCard({ project, modrinthDownloads, lastUpdated }) {
-  const downloadCount = (modrinthDownloads[project.modrinthId] || 0) + project.planetmcDownloads;
-  const lastUpdate = lastUpdated[project.modrinthId];
+  // Featured (öne çıkan) galeri görselini bul
+  let featuredGalleryImage = null;
+  if (project.gallery && project.gallery.length > 0) {
+    // Önce featured olan görseli ara
+    const featuredItem = project.gallery.find(item => item.featured === true);
+    if (featuredItem) {
+      featuredGalleryImage = featuredItem.url || featuredItem.URL || featuredItem.raw_url || null;
+    } else {
+      // Featured yoksa ilk görseli al
+      const firstItem = project.gallery[0];
+      featuredGalleryImage = firstItem.url || firstItem.URL || firstItem.raw_url || null;
+    }
+  }
+  
+  // Banner görseli: featured gallery > ilk gallery > icon > fallback
+  const coverImage = featuredGalleryImage || project.icon_url || '/img/commandblock.png';
+  const iconImage = project.icon_url || '/img/commandblock.png';
+  
+  // Sadece Modrinth download sayısı
+  const downloadCount = modrinthDownloads[project.id] || project.downloads || 0;
+  const lastUpdate = lastUpdated[project.id] || (project.updated ? formatDate(project.updated) : null);
+  
+  // Modrinth linki
+  const modrinthUrl = project.slug ? `https://modrinth.com/${project.project_type || 'datapack'}/${project.slug}` : null;
+  
+  // PlanetMC linkini issue_tracker_url'den al (eğer varsa)
+  const planetmcUrl = project.issue_tracker_url || null;
 
-  return (
-    <Link 
-      to={project.link}
-      className={styles.card}
-    >
+  const cardContent = (
+    <>
       <div className={styles.cardImage}>
-        <span className={styles.iconBox}>
-          <img src={project.icon} alt="icon" className={styles.iconImg} />
-        </span>
         <img 
-          src={project.coverImage} 
+          src={coverImage} 
           alt={project.title}
           onError={(e) => {
             e.target.src = '/img/commandblock.png'; // Fallback image
           }}
         />
       </div>
+      <span className={styles.iconBox}>
+        <img src={iconImage} alt="icon" className={styles.iconImg} onError={(e) => {
+          e.target.src = '/img/commandblock.png';
+        }} />
+      </span>
       <div className={styles.cardContent}>
         <h3 className={styles.cardTitle}>{project.title}</h3>
         <p className={styles.cardDescription}>{project.description}</p>
@@ -178,9 +93,9 @@ function DatapackCard({ project, modrinthDownloads, lastUpdated }) {
           </div>
           <div className={styles.cardFooterBottom}>
             <div className={styles.platformIcons}>
-              {project.modrinth && (
+              {modrinthUrl && (
                 <a
-                  href={project.modrinth}
+                  href={modrinthUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.modrinthIconLink}
@@ -190,26 +105,18 @@ function DatapackCard({ project, modrinthDownloads, lastUpdated }) {
                   <img src="/img/mediaicons/modrinthicon.png" alt="Modrinth" className={styles.modrinthIcon} />
                 </a>
               )}
-              <a
-                href={project.planetmc}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.planetmcIconLink}
-                title="View on PlanetMC"
-                onClick={(e) => e.stopPropagation()} // Kartın tıklanmasını engelle
-              >
-                <img src="/img/mediaicons/planetmc.png" alt="PlanetMC" className={styles.planetmcIcon} />
-              </a>
-              <a
-                href={project.curseforge}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.curseforgeIconLink}
-                title="View on CurseForge"
-                onClick={(e) => e.stopPropagation()} // Kartın tıklanmasını engelle
-              >
-                <img src="/img/mediaicons/curseforge.png" alt="CurseForge" className={styles.curseforgeIcon} />
-              </a>
+              {planetmcUrl && (
+                <a
+                  href={planetmcUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.planetmcIconLink}
+                  title="View on PlanetMC"
+                  onClick={(e) => e.stopPropagation()} // Kartın tıklanmasını engelle
+                >
+                  <img src="/img/mediaicons/planetmc.png" alt="PlanetMC" className={styles.planetmcIcon} />
+                </a>
+              )}
             </div>
             {lastUpdate && (
               <span className={styles.lastUpdate}>
@@ -219,26 +126,39 @@ function DatapackCard({ project, modrinthDownloads, lastUpdated }) {
           </div>
         </div>
       </div>
-    </Link>
+    </>
+  );
+
+  // Card her zaman Modrinth linkine yönlendiriyor
+  return (
+    <a 
+      href={modrinthUrl || '#'}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.card}
+    >
+      {cardContent}
+    </a>
   );
 }
 
 export default function DatapackCarousel() {
   const carouselRef = useRef(null);
+  const [projects, setProjects] = useState([]);
   const [modrinthDownloads, setModrinthDownloads] = useState({});
   const [lastUpdated, setLastUpdated] = useState({});
   const [currentPage, setCurrentPage] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   const CARDS_PER_PAGE = 6;
   
-  // Projeleri indirme sayısına göre sırala
+  // Projeleri indirme sayısına göre sırala (sadece Modrinth downloads)
   const getSortedProjects = () => {
-    return DatapackProjects.map(project => {
-      const modrinthCount = modrinthDownloads[project.modrinthId] || 0;
-      const totalDownloads = modrinthCount + project.planetmcDownloads;
+    return projects.map(project => {
+      const downloadCount = project.downloads || 0;
       return {
         ...project,
-        totalDownloads
+        totalDownloads: downloadCount
       };
     }).sort((a, b) => b.totalDownloads - a.totalDownloads);
   };
@@ -273,42 +193,160 @@ export default function DatapackCarousel() {
   };
 
   useEffect(() => {
-    // Modrinth API'den download sayılarını çek
-    const fetchProjectData = async () => {
-      const downloads = {};
-      const updates = {};
-      
-      for (const project of DatapackProjects) {
-        if (project.modrinthId) {
-          try {
-            const response = await fetch(`https://api.modrinth.com/v2/project/${project.modrinthId}`);
-            if (response.ok) {
-              const data = await response.json();
-              downloads[project.modrinthId] = data.downloads;
-              
-              if (data.updated) {
-                updates[project.modrinthId] = formatDate(data.updated);
-              }
-            }
-          } catch (error) {
-            console.warn(`Failed to fetch data for ${project.modrinthId}:`, error);
-            downloads[project.modrinthId] = 0;
-          }
+    console.log('🔥 useEffect triggered - DatapackCarousel mounted');
+    
+    // Modrinth API'den kullanıcının tüm projelerini çek
+    const fetchUserProjects = async () => {
+      console.log('=== Fetching projects from Modrinth API ===');
+      try {
+        setLoading(true);
+        console.log('1. Starting to fetch user data...');
+        
+        // Önce kullanıcı bilgisini al
+        const userResponse = await fetch('https://api.modrinth.com/v2/user/efeketket');
+        console.log('2. User API Response Status:', userResponse.status, userResponse.ok);
+        
+        if (!userResponse.ok) {
+          const errorText = await userResponse.text();
+          console.error('User API Error:', userResponse.status, errorText);
+          throw new Error(`Failed to fetch user: ${userResponse.status}`);
         }
+        
+        const userData = await userResponse.json();
+        console.log('User data:', userData);
+        
+        // Kullanıcının projelerini ID ile al
+        const projectsResponse = await fetch(`https://api.modrinth.com/v2/user/${userData.id}/projects`);
+        console.log('Projects API Response Status:', projectsResponse.status);
+        
+        if (!projectsResponse.ok) {
+          const errorText = await projectsResponse.text();
+          console.error('Projects API Error:', projectsResponse.status, errorText);
+          throw new Error(`Failed to fetch projects: ${projectsResponse.status}`);
+        }
+        
+        const projectIdsResponse = await projectsResponse.json();
+        console.log('Project IDs response:', projectIdsResponse);
+        
+        // Eğer response bir array ise ve içinde nesneler varsa, sadece ID'leri çıkar
+        // Eğer zaten string array ise, olduğu gibi kullan
+        let projectIds = [];
+        if (Array.isArray(projectIdsResponse)) {
+          projectIds = projectIdsResponse.map(item => {
+            // Eğer item bir string ise (ID), direkt kullan
+            if (typeof item === 'string') {
+              return item;
+            }
+            // Eğer item bir nesne ise, id alanını al
+            return item.id || item;
+          }).filter(id => id); // Boş değerleri filtrele
+        } else if (projectIdsResponse && typeof projectIdsResponse === 'object') {
+          // Eğer response bir nesne ise, içindeki ID'leri çıkar
+          console.warn('Unexpected response format, extracting IDs manually');
+          projectIds = Object.values(projectIdsResponse).map(item => 
+            typeof item === 'string' ? item : (item?.id || item)
+          ).filter(id => id);
+        }
+        
+        console.log('Extracted Project IDs:', projectIds);
+        
+        if (!projectIds || projectIds.length === 0) {
+          console.warn('No project IDs found');
+          setProjects([]);
+          setModrinthDownloads({});
+          setLastUpdated({});
+          setLoading(false);
+          return;
+        }
+        
+        // Toplu proje bilgilerini çek - Modrinth API formatına göre
+        // Modrinth API ids parametresini JSON array string formatında bekler
+        const idsParam = JSON.stringify(projectIds);
+        const detailsUrl = `https://api.modrinth.com/v2/projects?ids=${encodeURIComponent(idsParam)}`;
+        console.log('Details URL length:', detailsUrl.length);
+        
+        // URL çok uzunsa POST kullan
+        let detailsResponse;
+        if (detailsUrl.length > 2000) {
+          console.log('Using POST method due to long URL');
+          detailsResponse = await fetch('https://api.modrinth.com/v2/projects', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: idsParam
+          });
+        } else {
+          console.log('Using GET method');
+          detailsResponse = await fetch(detailsUrl);
+        }
+        console.log('Details API Response Status:', detailsResponse.status);
+        
+        if (!detailsResponse.ok) {
+          const errorText = await detailsResponse.text();
+          console.error('Details API Error:', detailsResponse.status, errorText);
+          throw new Error(`Failed to fetch project details: ${detailsResponse.status}`);
+        }
+        
+        const projectsData = await detailsResponse.json();
+        console.log('Projects data:', projectsData);
+        
+        if (!projectsData || projectsData.length === 0) {
+          console.warn('No projects data returned');
+          setProjects([]);
+          setModrinthDownloads({});
+          setLastUpdated({});
+          setLoading(false);
+          return;
+        }
+        
+        // Proje verilerini işle ve state'e set et
+        const formattedProjects = projectsData.map(projectData => ({
+          id: projectData.id,
+          modrinthId: projectData.id,
+          title: projectData.title,
+          description: projectData.description,
+          downloads: projectData.downloads || 0,
+          followers: projectData.followers || 0,
+          updated: projectData.updated,
+          icon_url: projectData.icon_url,
+          gallery: projectData.gallery || [],
+          project_type: projectData.project_type,
+          slug: projectData.slug,
+          issue_tracker_url: projectData.issue_tracker_url || null
+        }));
+        
+        // Downloads ve updates state'lerini güncelle
+        const downloads = {};
+        const updates = {};
+        formattedProjects.forEach(project => {
+          downloads[project.id] = project.downloads || 0;
+          if (project.updated) {
+            updates[project.id] = formatDate(project.updated);
+          }
+        });
+        
+        console.log('Processed projects:', formattedProjects.length, formattedProjects);
+        setProjects(formattedProjects);
+        setModrinthDownloads(downloads);
+        setLastUpdated(updates);
+        setLoading(false);
+        
+      } catch (error) {
+        console.error('Failed to fetch projects from Modrinth:', error);
+        setProjects([]);
+        setModrinthDownloads({});
+        setLastUpdated({});
+        setLoading(false);
       }
-      
-      setModrinthDownloads(downloads);
-      setLastUpdated(updates);
     };
 
-    fetchProjectData();
+    fetchUserProjects();
   }, []);
 
-  // Toplam download sayısını hesapla
-  const totalModrinthDownloads = Object.values(modrinthDownloads).reduce((total, d) => total + d, 0);
-  const totalPlanetMCDownloads = DatapackProjects.reduce((total, p) => total + p.planetmcDownloads, 0);
-  const totalDownloads = totalModrinthDownloads + totalPlanetMCDownloads;
-  const projectCount = DatapackProjects.length;
+  // Toplam download sayısını hesapla (sadece Modrinth)
+  const totalDownloads = Object.values(modrinthDownloads).reduce((total, d) => total + d, 0);
+  const projectCount = sortedProjects.length;
   
   return (
     <section className={styles.carouselSection}>
@@ -316,66 +354,84 @@ export default function DatapackCarousel() {
         <div className={styles.carouselHeader}>
           <h2 className={styles.carouselTitle}>Featured Datapacks & Mods</h2>
           <p className={styles.carouselSubtitle}>
-            Discover our collection of {projectCount} high-quality Minecraft datapacks with over {formatDownloads(totalDownloads)} total downloads
+            {loading ? (
+              'Loading projects...'
+            ) : (
+              `Discover our collection of ${projectCount} high-quality Minecraft datapacks with over ${formatDownloads(totalDownloads)} total downloads`
+            )}
           </p>
         </div>
         
         <div className={styles.carouselContainer}>
-          <div 
-            ref={carouselRef}
-            className={styles.carousel}
-          >
-            {getCurrentPageCards().map((project) => (
-              <DatapackCard 
-                key={project.id} 
-                project={project} 
-                modrinthDownloads={modrinthDownloads}
-                lastUpdated={lastUpdated}
-              />
-            ))}
-          </div>
-          
-          {/* Sayfalama Navigasyonu */}
-          <div className={styles.paginationContainer}>
-            <div className={styles.pagination}>
-              {/* Önceki sayfa butonu */}
-              <button
-                className={`${styles.pageButton} ${styles.prevButton} ${currentPage === 0 ? styles.disabled : ''}`}
-                onClick={prevPage}
-                disabled={currentPage === 0}
-                aria-label="Previous page"
+          {loading ? (
+            <div style={{ textAlign: 'center', padding: '4rem', color: '#CCCCCC' }}>
+              Loading projects from Modrinth...
+            </div>
+          ) : sortedProjects.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '4rem', color: '#CCCCCC' }}>
+              No projects found. Please check the browser console for errors.
+            </div>
+          ) : (
+            <>
+              <div 
+                ref={carouselRef}
+                className={styles.carousel}
               >
-                ‹
-              </button>
-              
-              {/* Sayfa noktaları */}
-              <div className={styles.pageDots}>
-                {Array.from({ length: totalPages }, (_, index) => (
-                  <button
-                    key={index}
-                    className={`${styles.pageDot} ${currentPage === index ? styles.activeDot : ''}`}
-                    onClick={() => goToPage(index)}
-                    aria-label={`Go to page ${index + 1}`}
+                {getCurrentPageCards().map((project) => (
+                  <DatapackCard 
+                    key={project.id || project.modrinthId} 
+                    project={project} 
+                    modrinthDownloads={modrinthDownloads}
+                    lastUpdated={lastUpdated}
                   />
                 ))}
               </div>
               
-              {/* Sonraki sayfa butonu */}
-              <button
-                className={`${styles.pageButton} ${styles.nextButton} ${currentPage === totalPages - 1 ? styles.disabled : ''}`}
-                onClick={nextPage}
-                disabled={currentPage === totalPages - 1}
-                aria-label="Next page"
-              >
-                ›
-              </button>
-            </div>
-            
-            {/* Sayfa bilgisi */}
-            <div className={styles.pageInfo}>
-              Page {currentPage + 1} of {totalPages}
-            </div>
-          </div>
+              {/* Sayfalama Navigasyonu */}
+              {totalPages > 1 && (
+                <div className={styles.paginationContainer}>
+                  <div className={styles.pagination}>
+                    {/* Önceki sayfa butonu */}
+                    <button
+                      className={`${styles.pageButton} ${styles.prevButton} ${currentPage === 0 ? styles.disabled : ''}`}
+                      onClick={prevPage}
+                      disabled={currentPage === 0}
+                      aria-label="Previous page"
+                    >
+                      ‹
+                    </button>
+                    
+                    {/* Sayfa noktaları */}
+                    <div className={styles.pageDots}>
+                      {Array.from({ length: totalPages }, (_, index) => (
+                        <button
+                          key={index}
+                          className={`${styles.pageDot} ${currentPage === index ? styles.activeDot : ''}`}
+                          onClick={() => goToPage(index)}
+                          aria-label={`Go to page ${index + 1}`}
+                        />
+                      ))}
+                    </div>
+                    
+                    {/* Sonraki sayfa butonu */}
+                    <button
+                      className={`${styles.pageButton} ${styles.nextButton} ${currentPage === totalPages - 1 ? styles.disabled : ''}`}
+                      onClick={nextPage}
+                      disabled={currentPage === totalPages - 1}
+                      aria-label="Next page"
+                    >
+                      ›
+                    </button>
+                  </div>
+                  
+                  {/* Sayfa bilgisi */}
+                  <div className={styles.pageInfo}>
+                    Page {currentPage + 1} of {totalPages}
+                  </div>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     </section>

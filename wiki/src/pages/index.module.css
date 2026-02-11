@@ -5,10 +5,12 @@
 
 .heroBanner {
   padding: 4rem 0;
+  min-height: 420px;
   text-align: center;
   position: relative;
   overflow: hidden;
   color: white;
+  background: transparent; /* Slider görünsün diye hero--primary arka planını geçersiz kıl */
 }
 
 .heroBanner::before {
@@ -18,11 +20,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
+  pointer-events: none;
 }
 
-.heroBanner > * {
+.heroContent {
   position: relative;
   z-index: 2;
 }

@@ -1,7 +1,6 @@
 .carouselSection {
   padding: 4rem 0;
   background: var(--ifm-background-surface-color);
-  display: none; /* Şimdilik gizli */
 }
 
 .carouselHeader {

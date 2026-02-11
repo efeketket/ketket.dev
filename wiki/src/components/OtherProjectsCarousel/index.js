@@ -5,27 +5,18 @@ import styles from './styles.module.css';
 
 const OtherProjects = [
   {
-    id: 'ecommerce-platform',
+    id: 'silverboardapi',
     title: 'SilverBoardAPI',
-    description: 'Modern React.js ile geliştirilmiş tam özellikli e-ticaret platformu. Redux, Node.js backend ve MongoDB kullanılarak oluşturuldu.',
-    coverImage: '/img/commandblock.png',
-    github: 'https://github.com/username/ecommerce',
-    liveDemo: 'https://ecommerce-demo.com'
+    description: 'Database application for sport teams. (Under development)',
+    coverImage: '/img/sblogo.png',
+    github: 'https://github.com/efeketket/SilverBoardAPI'
   },
   {
-    id: 'fitness-tracker',
+    id: 'ketnet-manager',
     title: 'KetNet Manager',
-    description: 'React Native ile geliştirilmiş fitness takip uygulaması. Kullanıcılar egzersizlerini kaydedebilir ve ilerlemelerini takip edebilir.',
-    coverImage: '/img/commandblock.png',
-    github: 'https://github.com/username/fitness-tracker',
-    appStore: 'https://apps.apple.com/app/fitness-tracker'
-  },
-  {
-    id: 'file-manager',
-    title: 'Pixelyap.shop',
-    description: 'Electron tabanlı masaüstü dosya yöneticisi. Gelişmiş arama, dosya önizleme ve çoklu seçim özellikleri.',
-    coverImage: '/img/commandblock.png',
-    github: 'https://github.com/username/file-manager'
+    description: 'C#, Windows Forms ile ders projesi olarak geliştirilmiş internet kafe uygulaması.',
+    coverImage: '/img/ketnetlogo.png',
+    github: 'https://github.com/efeketket/KetNet_Manager'
   }
 ];
 
@@ -141,7 +132,7 @@ export default function OtherProjectsCarousel() {
         <div className={styles.carouselHeader}>
           <h2 className={styles.carouselTitle}>General Projects</h2>
           <p className={styles.carouselSubtitle}>
-            Minecraft dışındaki öne çıkan projelerim - Web geliştirme, mobil uygulamalar, oyun geliştirme ve daha fazlası
+          My general projects. Other than Minecraft.
           </p>
         </div>
         

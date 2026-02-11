@@ -6,6 +6,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import DatapackCarousel from '@site/src/components/DatapackCarousel';
 import OtherProjectsSection from '@site/src/components/OtherProjects';
 import OtherProjectsCarousel from '@site/src/components/OtherProjectsCarousel';
+import HeroSlider from '@site/src/components/HeroSlider';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -14,7 +15,8 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
+      <HeroSlider />
+      <div className={clsx('container', styles.heroContent)}>
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
@@ -44,12 +46,11 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        {/* <OtherProjectsSection /> */}
-        {/* <OtherProjectsCarousel /> */}
         <div id="minecraft-projects">
           <HomepageFeatures />
           <DatapackCarousel />
         </div>
+        <OtherProjectsCarousel />
       </main>
     </Layout>
   );
