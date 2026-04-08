@@ -7,7 +7,7 @@ sidebar_position: 1
 # 🛍️ Ketket's Player Shops – Sell in Style!
 
 A Minecraft **Quality of Life** datapack that adds a fully functional player-driven shop system — all in vanilla Minecraft.  
-Supports versions **1.19.4 → 1.21.6**
+Supports versions **1.19.4 → 26.1**
 
 ![imgfav1](https://github.com/efeketket/ketkets-player-shops/assets/117019767/8e8832e8-3b8f-4e72-8035-4e35cfcf00f7)
 

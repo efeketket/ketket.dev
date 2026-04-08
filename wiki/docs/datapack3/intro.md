@@ -18,6 +18,6 @@ There are **14 different types of graves**, each styled based on the **biome** o
 
 ---
 
-This datapack is lightweight, resource-pack free, and compatible with **Minecraft 1.19.4 to 1.21.6**.
+This datapack is lightweight, resource-pack free, and compatible with **Minecraft 1.19.4 - 26.1**.
 
 Graves are automatically created on death and provide an immersive way to protect a player’s gear.

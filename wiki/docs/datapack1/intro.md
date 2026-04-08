@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # 🪑 FurniCraft - Furnish Your Creations!
 
-A Minecraft Quality of Life datapack, compatible with version **1.20 & 1.21**. This datapack introduces new furniture to your game.  
+A Minecraft Quality of Life datapack, compatible with version **1.20 & 26.1**. This datapack introduces new furniture to your game.  
 ✨ _No texture pack required!_
 
 ![FurniCraft Banner](https://user-images.githubusercontent.com/117019767/268712967-f2fa3efc-4002-4c74-8e81-4a86078d957d.png)
