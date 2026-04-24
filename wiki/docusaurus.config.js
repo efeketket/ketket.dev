@@ -57,6 +57,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          routeBasePath: 'minecraft/wiki',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -99,21 +100,15 @@ const config = {
       
       navbar: {
         title: "Ketket's Creations",
-        logo: {
-          alt: "Ketket's Wiki Logo",
-          src: 'img/transppp.png',
-          width: 40,
-          height: 40,
-        },
         items: [
+          {to: '/minecraft', label: 'Minecraft', position: 'right'},
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'right',
             label: 'Wiki',
           },
-          {to: '/blog', label: 'FAQ', position: 'right'},
-          {to: '/about', label: 'About Me', position: 'right'},
+          {to: '/blog', label: 'Blog', position: 'right'},
           {
             href: 'https://github.com/efeketket',
             label: 'GitHub',
@@ -125,50 +120,25 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Navigate',
             items: [
-              {
-                label: 'Wiki',
-                to: '/docs/intro',
-              },
+              { label: 'Home', to: '/' },
+              { label: 'Minecraft', to: '/minecraft' },
+              { label: 'Wiki', to: '/minecraft/wiki/intro' },
+              { label: 'Blog', to: '/blog' },
             ],
           },
           {
-            title: 'Projects',
+            title: 'Find me',
             items: [
-              {
-                label: 'Modrinth',
-                href: 'https://modrinth.com/user/efeketket',
-              },
-              {
-                label: 'CurseForge',
-                href: 'https://www.curseforge.com/members/efeketket__/projects',
-              },
-              {
-                label: 'PlanetMC',
-                href: 'https://www.planetminecraft.com/member/efeketket/',
-              }
-            ],
-          },
-          {
-            title: 'Social',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/efeketket',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/in/efe-ketancı-193902248/',
-              },
-              {
-                label: 'Instagram',
-                href: 'https://instagram.com/efeketket',
-              },
+              { label: 'GitHub', href: 'https://github.com/efeketket' },
+              { label: 'LinkedIn', href: 'https://www.linkedin.com/in/efe-ketancı-193902248/' },
+              { label: 'Modrinth', href: 'https://modrinth.com/user/efeketket' },
+              { label: 'Instagram', href: 'https://instagram.com/efeketket' },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Efe Ketenci. Built with Docusaurus.`,
+        copyright: `© ${new Date().getFullYear()} Efe Ketenci`,
       },
       prism: {
         theme: prismThemes.github,

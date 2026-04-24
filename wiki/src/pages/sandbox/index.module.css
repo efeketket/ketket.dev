@@ -1,0 +1,122 @@
+.section {
+  padding: 4rem 0;
+  background: var(--ifm-background-surface-color);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.empty {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-600);
+  padding: 4rem 0;
+}
+
+/* 3-column grid — same as DatapackCarousel */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Card */
+.card {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  min-height: 320px;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+  color: inherit;
+}
+
+.cardImage {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  background: var(--ifm-color-emphasis-200);
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 1.4rem 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.65rem;
+  color: var(--ifm-color-emphasis-900);
+  transition: color 0.3s ease;
+}
+
+.card:hover .cardTitle {
+  color: var(--ifm-color-primary);
+}
+
+.cardDescription {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}

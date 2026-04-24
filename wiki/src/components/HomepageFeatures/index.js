@@ -61,12 +61,23 @@ function Feature({Svg, title, description, img, imgStyle}) {
   );
 }
 
-export default function HomepageFeatures() {
+function formatDownloads(n) {
+  if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+  return n.toString();
+}
+
+export default function HomepageFeatures({ stats }) {
+  const subtitle = stats
+    ? `Discover our collection of ${stats.projectCount} high-quality Minecraft datapacks with over ${formatDownloads(stats.totalDownloads)} total downloads`
+    : 'Discover our collection of high-quality Minecraft datapacks and mods.';
+
   return (
     <section className={styles.features}>
       <div className="container">
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Minecraft Projects</h2>
+          <p className={styles.sectionSubtitle}>{subtitle}</p>
         </div>
         <div className="row">
           {FeatureList.map((props, idx) => (

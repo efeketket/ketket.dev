@@ -142,7 +142,7 @@ function DatapackCard({ project, modrinthDownloads, lastUpdated }) {
   );
 }
 
-export default function DatapackCarousel() {
+export default function DatapackCarousel({ onStatsLoaded }) {
   const carouselRef = useRef(null);
   const [projects, setProjects] = useState([]);
   const [modrinthDownloads, setModrinthDownloads] = useState({});
@@ -331,6 +331,10 @@ export default function DatapackCarousel() {
         setModrinthDownloads(downloads);
         setLastUpdated(updates);
         setLoading(false);
+        if (onStatsLoaded) {
+          const totalDl = Object.values(downloads).reduce((sum, d) => sum + d, 0);
+          onStatsLoaded({ projectCount: formattedProjects.length, totalDownloads: totalDl });
+        }
         
       } catch (error) {
         console.error('Failed to fetch projects from Modrinth:', error);
@@ -353,13 +357,6 @@ export default function DatapackCarousel() {
       <div className="container">
         <div className={styles.carouselHeader}>
           <h2 className={styles.carouselTitle}>Featured Datapacks & Mods</h2>
-          <p className={styles.carouselSubtitle}>
-            {loading ? (
-              'Loading projects...'
-            ) : (
-              `Discover our collection of ${projectCount} high-quality Minecraft datapacks with over ${formatDownloads(totalDownloads)} total downloads`
-            )}
-          </p>
         </div>
         
         <div className={styles.carouselContainer}>
