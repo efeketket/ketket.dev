@@ -1,6 +1,26 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styles from './styles.module.css';
 
+const SHARED_DATAPACK_REPO_URL = 'https://github.com/Ketket-s-Datapacks/ketketdatapacks';
+const MOBILE_BREAKPOINT = 768;
+const DESKTOP_CARDS_PER_PAGE = 6;
+const MOBILE_CARDS_PER_PAGE = 3;
+
+const PROJECT_SOURCE_FOLDERS_BY_SLUG = {
+  'ketkets-better-cauldrons': 'Better Cauldron',
+  'ketkets-better-hanging-signs': 'Better Hanging Signs',
+  'ketkets-mannequins': 'Custom NPC',
+  'ketkets-displaycases': 'Displaycases',
+  'ketkets-easycoords': 'EasyCoords',
+  'ketkets-furnicraft': 'FurniCraft',
+  'ketkets-graves': 'Graves',
+  'ketkets-player-shops': 'Player Shops',
+  'ketkets-quick-shulker-boxes': 'Quick Shulker Boxes',
+  'ketkets-silk-fortune-switch': 'SilkFortune Switch',
+  'ketkets-stackraft': 'Stackraft',
+  'ketkets-totem-refill': 'TotemRefill'
+};
+
 // Download sayısını formatla
 function formatDownloads(downloads) {
   if (downloads >= 1000000) {
@@ -61,6 +81,10 @@ function DatapackCard({ project, modrinthDownloads, lastUpdated }) {
   
   // Modrinth linki
   const modrinthUrl = project.slug ? `https://modrinth.com/${project.project_type || 'datapack'}/${project.slug}` : null;
+  const sourceFolder = project.slug ? PROJECT_SOURCE_FOLDERS_BY_SLUG[project.slug] : null;
+  const githubUrl = sourceFolder
+    ? `${SHARED_DATAPACK_REPO_URL}/tree/master/${encodeURIComponent(sourceFolder)}`
+    : SHARED_DATAPACK_REPO_URL;
   
   // PlanetMC linkini issue_tracker_url'den al (eğer varsa)
   const planetmcUrl = project.issue_tracker_url || null;
@@ -103,6 +127,20 @@ function DatapackCard({ project, modrinthDownloads, lastUpdated }) {
                   onClick={(e) => e.stopPropagation()} // Kartın tıklanmasını engelle
                 >
                   <img src="/img/mediaicons/modrinthicon.png" alt="Modrinth" className={styles.modrinthIcon} />
+                </a>
+              )}
+              {githubUrl && (
+                <a
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.githubIconLink}
+                  title="View Source on GitHub"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <svg className={styles.githubIcon} viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12C0 17.3 3.44 21.8 8.21 23.39C8.81 23.5 9 23.13 9 22.81V20.58C5.66 21.31 4.97 19.16 4.97 19.16C4.42 17.77 3.63 17.4 3.63 17.4C2.55 16.66 3.72 16.67 3.72 16.67C4.93 16.75 5.56 17.91 5.56 17.91C6.63 19.75 8.37 19.22 9.06 18.92C9.17 18.14 9.48 17.61 9.83 17.31C7.17 17.01 4.37 15.98 4.37 11.39C4.37 10.08 4.84 9.01 5.61 8.17C5.49 7.87 5.08 6.65 5.73 5C5.73 5 6.74 4.68 9.03 6.23C9.99 5.97 11.01 5.83 12.03 5.83C13.05 5.83 14.08 5.97 15.04 6.23C17.33 4.68 18.34 5 18.34 5C18.99 6.65 18.58 7.87 18.46 8.17C19.23 9.01 19.7 10.08 19.7 11.39C19.7 15.99 16.9 17 14.23 17.3C14.67 17.68 15.08 18.42 15.08 19.55V22.81C15.08 23.13 15.27 23.51 15.88 23.39C20.65 21.8 24.08 17.3 24.08 12C24.08 5.37 18.71 0 12.08 0H12Z" />
+                  </svg>
                 </a>
               )}
               {planetmcUrl && (
@@ -149,8 +187,7 @@ export default function DatapackCarousel({ onStatsLoaded }) {
   const [lastUpdated, setLastUpdated] = useState({});
   const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(true);
-
-  const CARDS_PER_PAGE = 6;
+  const [cardsPerPage, setCardsPerPage] = useState(DESKTOP_CARDS_PER_PAGE);
   
   // Projeleri indirme sayısına göre sırala (sadece Modrinth downloads)
   const getSortedProjects = () => {
@@ -164,12 +201,12 @@ export default function DatapackCarousel({ onStatsLoaded }) {
   };
   
   const sortedProjects = getSortedProjects();
-  const totalPages = Math.ceil(sortedProjects.length / CARDS_PER_PAGE);
+  const totalPages = Math.ceil(sortedProjects.length / cardsPerPage);
   
   // Mevcut sayfa için kartları filtrele
   const getCurrentPageCards = () => {
-    const startIndex = currentPage * CARDS_PER_PAGE;
-    const endIndex = startIndex + CARDS_PER_PAGE;
+    const startIndex = currentPage * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
     return sortedProjects.slice(startIndex, endIndex);
   };
 
@@ -191,6 +228,26 @@ export default function DatapackCarousel({ onStatsLoaded }) {
       setCurrentPage(currentPage - 1);
     }
   };
+
+  useEffect(() => {
+    const updateCardsPerPage = () => {
+      setCardsPerPage(window.innerWidth <= MOBILE_BREAKPOINT ? MOBILE_CARDS_PER_PAGE : DESKTOP_CARDS_PER_PAGE);
+    };
+
+    updateCardsPerPage();
+    window.addEventListener('resize', updateCardsPerPage);
+
+    return () => {
+      window.removeEventListener('resize', updateCardsPerPage);
+    };
+  }, []);
+
+  useEffect(() => {
+    const maxPage = Math.max(Math.ceil(sortedProjects.length / cardsPerPage) - 1, 0);
+    if (currentPage > maxPage) {
+      setCurrentPage(maxPage);
+    }
+  }, [currentPage, sortedProjects.length, cardsPerPage]);
 
   useEffect(() => {
     console.log('🔥 useEffect triggered - DatapackCarousel mounted');

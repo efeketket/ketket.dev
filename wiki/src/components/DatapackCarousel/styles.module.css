@@ -177,7 +177,7 @@
 }
 
 .modrinthIconLink {
-  margin-left: 10px;
+  margin-left: 0;
   display: inline-flex;
   align-items: center;
 }
@@ -191,6 +191,29 @@
 }
 
 .modrinthIconLink:hover .modrinthIcon {
+  transform: scale(1.15) rotate(-8deg);
+}
+
+.githubIconLink {
+  margin-left: 5px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.githubIcon {
+  width: 34px;
+  height: 34px;
+  fill: currentColor;
+  display: block;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.githubIconLink:hover {
+  color: var(--ifm-color-primary);
+}
+
+.githubIconLink:hover .githubIcon {
   transform: scale(1.15) rotate(-8deg);
 }
 

@@ -27,9 +27,9 @@ function MinecraftHeader() {
             📂 Explore Wiki
           </Link>
           <Link
-            className="button button--outline button--lg"
-            to="#minecraft-projects">
-            ⛏️ Minecraft Projects
+            className="button button--info button--lg"
+            href="https://github.com/Ketket-s-Datapacks/ketketdatapacks">
+            💻 Source Code
           </Link>
         </div>
       </div>

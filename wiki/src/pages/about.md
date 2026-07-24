@@ -1,9 +1,4 @@
 # ketket.dev Hakkında
 İstanbul merkezli bir Yazılım Geliştiricisi ve Matematik & Bilgisayar Bilimleri öğrencisiyim. Karmaşık görünen problemleri algoritmik bir disiplinle ele alıp, fikirleri çalışan ürünlere dönüştürmeyi seviyorum.
 
-"Daha iyisi neden olmasın?" sorusu, geliştirdiğim her satır kodun arkasındaki temel motivasyonum. Bir solopreneur olarak kendimi tek bir alanla sınırlamıyorum; tasarımından mimarisine kadar heyecan duyduğum ve keyif aldığım projeleri bizzat inşa etmeyi tercih ediyorum.
-
-Burası benim dijital laboratuvarım. Öğrendiklerimi paylaştığım, projelerimin gelişim süreçlerini belgelediğim ve tecrübelerimi aktardığım kişisel alanım. [Çalışmalarım için ↓](#projeler-kismi)
-
-_"Vatanını en çok seven, görevini en iyi yapandır."_  
-_Mustafa Kemal Atatürk_
+"Daha iyisi neden olmasın?" sorusu, geliştirdiğim her satır kodun arkasındaki temel motivasyonum.<span class="mobile-more-inline"> Bir solopreneur olarak kendimi tek bir alanla sınırlamıyorum; tasarımından mimarisine kadar heyecan duyduğum ve keyif aldığım projeleri bizzat inşa etmeyi tercih ediyorum.</span><span class="mobile-more-inline"> Burası benim dijital laboratuvarım. Öğrendiklerimi paylaştığım, projelerimin gelişim süreçlerini belgelediğim ve tecrübelerimi aktardığım kişisel alanım. [Çalışmalarım için ↓](#projeler-kismi)</span><span class="mobile-more-inline"><br /><br /><em>"Vatanını en çok seven, görevini en iyi yapandır."</em><br /><em>Mustafa Kemal Atatürk</em></span><details class="mobile-read-more"><summary>Daha fazla</summary>Bir solopreneur olarak kendimi tek bir alanla sınırlamıyorum; tasarımından mimarisine kadar heyecan duyduğum ve keyif aldığım projeleri bizzat inşa etmeyi tercih ediyorum. Burası benim dijital laboratuvarım. Öğrendiklerimi paylaştığım, projelerimin gelişim süreçlerini belgelediğim ve tecrübelerimi aktardığım kişisel alanım. <a href="#projeler-kismi">Çalışmalarım için ↓</a><br /><br /><em>"Vatanını en çok seven, görevini en iyi yapandır."</em><br /><em>Mustafa Kemal Atatürk</em></details>

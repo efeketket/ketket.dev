@@ -6,13 +6,13 @@
  */
 
 export const HERO_SLIDES = [
-  '/img/hero/b1.png',
-  '/img/hero/b2.png',
-  '/img/hero/b3.png',
-  '/img/hero/b4.png',
-  '/img/hero/b5.png',
-  '/img/hero/b6.png',
-  '/img/hero/b7.png',
-  '/img/hero/b8.png',
-  '/img/hero/b9.png'
+  '/img/hero/optimized/b1.jpg',
+  '/img/hero/optimized/b2.jpg',
+  '/img/hero/optimized/b3.jpg',
+  '/img/hero/optimized/b4.jpg',
+  '/img/hero/optimized/b5.jpg',
+  '/img/hero/optimized/b6.jpg',
+  '/img/hero/optimized/b7.jpg',
+  '/img/hero/optimized/b8.jpg',
+  '/img/hero/optimized/b9.jpg'
 ];

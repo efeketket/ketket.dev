@@ -46,8 +46,31 @@
 .buttons :global(.button) {
   margin: 0 0.5rem;
   transition: all 0.3s ease;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #111111;
 }
 
 .buttons :global(.button:hover) {
   transform: translateY(-2px);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #111111;
+}
+
+@media screen and (max-width: 768px) {
+  .buttons {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+  }
+
+  .buttons :global(.button) {
+    margin: 0;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    padding: 0.6rem 0.9rem;
+  }
 }

@@ -66,13 +66,14 @@
   grid-template-columns: 280px 1fr;
   gap: 3.5rem;
   align-items: start;
-  margin-bottom: 5rem;
+  margin-bottom: 2.4rem;
 }
 
 @media (max-width: 860px) {
   .topSection {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -190,6 +191,36 @@
   filter: brightness(1.1);
 }
 
+.spotifyOnly {
+  margin-top: 2.4rem;
+}
+
+.spotifyEmbed {
+  border-radius: 0.6rem;
+  display: block;
+}
+
+.spotifyOpenButton {
+  display: none;
+  margin-top: 0.65rem;
+  width: 100%;
+  border: 1px solid rgba(29, 185, 84, 0.55);
+  background: rgba(29, 185, 84, 0.16);
+  color: #EAFBF1;
+  border-radius: 0.55rem;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.spotifyOpenButton:hover {
+  background: rgba(29, 185, 84, 0.24);
+  border-color: rgba(29, 185, 84, 0.75);
+  transform: translateY(-1px);
+}
+
 /* ============================================================
    Right column — about content
    ============================================================ */
@@ -274,6 +305,49 @@
   text-decoration: underline;
 }
 
+.aboutContent :global(.mobile-read-more) {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .spotifyOnly {
+    margin-top: 2rem;
+  }
+
+  .spotifyOpenButton {
+    display: block;
+  }
+
+  .aboutContent :global(.mobile-more-inline) {
+    display: none;
+  }
+
+  .aboutContent :global(.mobile-read-more) {
+    display: inline;
+  }
+
+  .aboutContent :global(.mobile-read-more summary) {
+    display: inline;
+    margin-left: 0.35rem;
+    color: var(--ifm-color-primary-lighter);
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+  }
+
+  .aboutContent :global(.mobile-read-more summary::-webkit-details-marker) {
+    display: none;
+  }
+
+  .aboutContent :global(.mobile-read-more summary::marker) {
+    content: '';
+  }
+
+  .aboutContent :global(.mobile-read-more[open] summary) {
+    display: none;
+  }
+}
+
 /* ============================================================
    Light mode
    ============================================================ */
@@ -341,6 +415,15 @@
 
 [data-theme='light'] .aboutContent a {
   color: #2563EB;
+}
+
+[data-theme='light'] .aboutContent :global(.mobile-read-more summary) {
+  color: #2563EB;
+}
+
+[data-theme='light'] .spotifyOpenButton {
+  color: #14532D;
+  background: rgba(29, 185, 84, 0.2);
 }
 
 [data-theme='light'] .aboutContent hr {

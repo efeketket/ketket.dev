@@ -11,6 +11,18 @@ const PROJECTS = [
     href: 'https://github.com/efeketket/KetNet_Manager',
   },
   {
+    title: 'SilverBoard API',
+    description: 'An open-source sports management and performance analysis platform designed to streamline training schedules and player statistics.',
+    coverImage: '/img/sblogo.png',
+    href: 'https://github.com/efeketket/SilverBoardAPI',
+  },
+  {
+    title: 'YZK Arcade',
+    description: 'A web arcade showcase that brings together browser-based mini game experiences.',
+    coverImage: '/img/yzkarcade.png',
+    href: 'https://yzkarcade.netlify.app',
+  },
+  {
     title: 'Distribution Goodness of Fit Checker',
     description: 'A specialized module for testing Poisson Distribution fit, utilizing Chi-Square metrics to analyze the frequency of independent events occurring within fixed intervals.',
     coverImage: '/img/sandbox.png',
@@ -55,15 +67,15 @@ export default function Sandbox() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Academic Sandbox — ${siteConfig.title}`}
-      description="Academic projects, experiments and coursework by Efe Ketenci">
+      title={`Academic & Hobby Sandbox — ${siteConfig.title}`}
+      description="Academic and hobby projects, experiments and coursework by Efe Ketenci">
       <main>
         <section className={styles.section}>
           <div className="container">
             <div className={styles.header}>
-              <h2 className={styles.title}>Academic Sandbox</h2>
+              <h2 className={styles.title}>Academic & Hobby Sandbox</h2>
               <p className={styles.subtitle}>
-                Projects, experiments and coursework spanning mathematics, computer science and data systems.
+                Projects, experiments and coursework spanning mathematics, computer science, data systems and hobby software work.
               </p>
             </div>
 

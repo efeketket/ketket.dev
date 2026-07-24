@@ -9,20 +9,35 @@ import AboutEngContent from './abouteng.md';
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   const [lang, setLang] = useState('en');
+  const playlistId = '2yaa7DYfJyBhQj6jxJ4xj8';
+  const playlistWebUrl = 'https://open.spotify.com/playlist/2yaa7DYfJyBhQj6jxJ4xj8?si=63b2880c5a714f6f';
 
   const content = {
     tr: {
       title: "Geliştirici • Matematik ve Bilgisayar Bilimleri Öğrencisi",
       cvButton: "CV'm",
+      spotifyOpen: "Spotify uygulamasında aç",
     },
     en: {
       title: "Developer • Mathematics & Computer Science Student",
       cvButton: "My CV",
+      spotifyOpen: "Open in Spotify app",
     },
   };
 
   const c = content[lang];
   const AboutMd = lang === 'tr' ? <AboutContent /> : <AboutEngContent />;
+
+  function openSpotifyApp() {
+    const appUrl = `spotify:playlist:${playlistId}`;
+    const startedAt = Date.now();
+    window.location.href = appUrl;
+    window.setTimeout(() => {
+      if (!document.hidden && Date.now() - startedAt < 2200) {
+        window.location.href = playlistWebUrl;
+      }
+    }, 1200);
+  }
 
   return (
     <Layout
@@ -116,6 +131,21 @@ export default function Home() {
               <div className={styles.aboutContent}>
                 {AboutMd}
               </div>
+              <section className={styles.spotifyOnly}>
+                <iframe
+                  title="Spotify playlist"
+                  src={`https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator`}
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  className={styles.spotifyEmbed}
+                />
+                <button type="button" className={styles.spotifyOpenButton} onClick={openSpotifyApp}>
+                  {c.spotifyOpen}
+                </button>
+              </section>
             </div>
           </div>
           {/* Portfolio cards */}
