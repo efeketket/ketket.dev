@@ -14,12 +14,12 @@ export default function Home() {
 
   const content = {
     tr: {
-      title: "Geliştirici • Matematik ve Bilgisayar Bilimleri Öğrencisi",
+      title: "Software Developer • Entrepreneur",
       cvButton: "CV'm",
       spotifyOpen: "Spotify uygulamasında aç",
     },
     en: {
-      title: "Developer • Mathematics & Computer Science Student",
+      title: "Software Developer • Entrepreneur",
       cvButton: "My CV",
       spotifyOpen: "Open in Spotify app",
     },
@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <Layout
       title={siteConfig.title}
-      description="Efe Ketenci — Developer, Mathematics and Computer Science student.">
+      description="Efe Ketancı — Developer, Mathematics and Computer Science student.">
       <main className={styles.page}>
         <div className={styles.wrapper}>
 
@@ -70,15 +70,15 @@ export default function Home() {
                 <div className={styles.avatarGlow} />
                 <img
                   src="/img/aboutme/avatar1.png"
-                  alt="Efe Ketenci"
+                  alt="Efe Ketancı"
                   className={styles.avatar}
                 />
               </div>
-              <h1 className={styles.name}>Efe Ketenci</h1>
+              <h1 className={styles.name}>Efe Ketancı</h1>
               <p className={styles.titleText}>{c.title}</p>
               <div className={styles.socialRow}>
                 {/* CV */}
-                <a href="#" target="_blank" rel="noopener noreferrer" className={styles.socialBtn} title={c.cvButton}>
+                <a href="/Efe_Ketanci_Resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.socialBtn} title={c.cvButton}>
                   <svg xmlns="http://www.w3.org/2000/svg" className={styles.socialIcon} viewBox="0 0 24 24" fill="currentColor">
                     <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6zm2-5h8v1.5H8V15zm0-3h8v1.5H8V12zm0-3h5v1.5H8V9z"/>
                   </svg>
@@ -102,7 +102,7 @@ export default function Home() {
                   </svg>
                 </a>
                 {/* Discord */}
-                <a href="#" target="_blank" rel="noopener noreferrer" className={styles.socialBtn} title="Discord">
+                <a href="https://discord.com/users/324325674678485002" target="_blank" rel="noopener noreferrer" className={styles.socialBtn} title="Discord">
                   <svg xmlns="http://www.w3.org/2000/svg" className={styles.socialIcon} viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
                   </svg>

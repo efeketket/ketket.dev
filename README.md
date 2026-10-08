@@ -161,7 +161,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 👨‍💻 Developer
 
-**Efe Ketenci**
+**Efe Ketancı**
 - 🎓 Eskişehir Osmangazi University - Mathematics and Computer Science
 - 🎮 Minecraft mod developer
 - 🌐 [ketket.dev](https://ketket.dev)

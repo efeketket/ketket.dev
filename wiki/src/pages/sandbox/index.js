@@ -68,7 +68,7 @@ export default function Sandbox() {
   return (
     <Layout
       title={`Academic & Hobby Sandbox — ${siteConfig.title}`}
-      description="Academic and hobby projects, experiments and coursework by Efe Ketenci">
+      description="Academic and hobby projects, experiments and coursework by Efe Ketancı">
       <main>
         <section className={styles.section}>
           <div className="container">

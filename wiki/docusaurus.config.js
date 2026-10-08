@@ -99,7 +99,7 @@ const config = {
       },
       
       navbar: {
-        title: "Ketket's Creations",
+        title: 'Ketket.dev',
         items: [
           {to: '/minecraft', label: 'Minecraft', position: 'right'},
           {
@@ -138,7 +138,7 @@ const config = {
             ],
           },
         ],
-        copyright: `© ${new Date().getFullYear()} Efe Ketenci`,
+        copyright: `© ${new Date().getFullYear()} Efe Ketancı`,
       },
       prism: {
         theme: prismThemes.github,
